@@ -7,17 +7,17 @@ def read_file(file_name: str) -> str:
 
 
 setup(
-    name="cloudshell-template",
-    url="http://www.qualisystems.com/",
-    author="QualiSystems",
-    author_email="info@qualisystems.com",
+    name="cloudshell-raritan",
+    url="http://www.quali.com/",
+    author="Quali",
+    author_email="info@quali.com",
     packages=find_packages(),
     install_requires=read_file("requirements.txt"),
     tests_require=read_file("test_requirements.txt"),
-    python_requires="~=3.7",
+    python_requires="~=3.9",
     version=read_file("version.txt"),
     package_data={"": ["*.txt"]},
-    description="<your package description>",
-    long_description="<your package description>",
+    description="Quali Raritan PDU specific package",
+    long_description="Raritan PDU Shell operations",
     include_package_data=True,
 )
