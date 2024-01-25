@@ -4,14 +4,14 @@ repos:
     hooks:
       - id: pyupgrade
         args:
-          - "--py37-plus"
+          - "--py39-plus"
   - repo: https://github.com/timothycrosley/isort
     rev: 5.12.0
     hooks:
       - id: isort
         exclude: '/mibs'
   - repo: https://github.com/python/black
-    rev: 23.3.0
+    rev: 22.12.0
     hooks:
       - id: black
         exclude: '/mibs'
@@ -27,13 +27,4 @@ repos:
           flake8-eradicate,
           flake8-requirements,
         ]
-        args: [
-          "--known-modules=cloudshell-template:[cloudshell.template],cloudshell-shell-core:[cloudshell.shell.core]"
-        ]
         exclude: '/mibs'
-  - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.1.1
-    hooks:
-      - id: mypy
-        additional_dependencies: [types-attrs]
-        exclude: ^tests/
