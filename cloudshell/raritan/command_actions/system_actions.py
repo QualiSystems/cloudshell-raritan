@@ -53,7 +53,7 @@ class SystemActions:
         ).execute_command()
 
         for outlet_id, outlet_state in re.findall(
-            r"Outlet\s+(?P<outlet_id>\d+):\sPower state:\s+(?P<outlet_state>\w+)",
+            r"Outlet\s+(?P<outlet_id>\d+).*:\sPower state:\s+(?P<outlet_state>\w+)",
             output,
         ):
             outlets_info.update({outlet_id: outlet_state})
