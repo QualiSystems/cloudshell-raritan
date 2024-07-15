@@ -6,6 +6,7 @@ from cloudshell.cli.session.telnet_session import TelnetSession
 
 if TYPE_CHECKING:
     from logging import Logger
+
     from cloudshell.cli.types import T_ACTION_MAP
 
 
