@@ -17,13 +17,13 @@ from cloudshell.cli.factory.session_factory import (
 from cloudshell.cli.service.command_mode_helper import CommandModeHelper
 from cloudshell.cli.session.console_ssh import ConsoleSSHSession
 from cloudshell.cli.session.console_telnet import ConsoleTelnetSession
-from cloudshell.cli.session.ssh_session import SSHSession
-from cloudshell.cli.session.telnet_session import TelnetSession
 
 from cloudshell.raritan.cli.raritan_command_modes import (
     ConfigCommandMode,
     EnableCommandMode,
 )
+from cloudshell.raritan.cli.raritan_ssh_session import RaritanSSHSession
+from cloudshell.raritan.cli.raritan_telnet_session import RaritanTelnetSession
 
 if TYPE_CHECKING:
     from cloudshell.cli.service.cli import CLI
@@ -33,8 +33,8 @@ if TYPE_CHECKING:
 @define
 class RaritanCliConfigurator(AbstractModeConfigurator):
     REGISTERED_SESSIONS: ClassVar[tuple[SessionFactory]] = (
-        CloudInfoAccessKeySessionFactory(SSHSession),
-        GenericSessionFactory(TelnetSession),
+        CloudInfoAccessKeySessionFactory(RaritanSSHSession),
+        GenericSessionFactory(RaritanTelnetSession),
         ConsoleSessionFactory(ConsoleSSHSession),
         ConsoleSessionFactory(
             ConsoleTelnetSession, session_kwargs={"start_with_new_line": False}
