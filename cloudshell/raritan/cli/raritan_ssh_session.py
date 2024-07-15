@@ -10,7 +10,7 @@ if TYPE_CHECKING:
 
 class RaritanSSHSession(SSHSession):
     def _connect_actions(self, prompt: str, logger: Logger) -> None:
-        action_map = dict()
+        action_map = {}
         cli_action_key = r"Restricted Service Agreement"
 
         def action(session: RaritanSSHSession, sess_logger: Logger) -> None:
